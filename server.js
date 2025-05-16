@@ -10,9 +10,9 @@ const EMAIL_TO = "svcmarineservices@gmail.com";
 
 async function getInternalLinks() {
   const browser = await puppeteer.launch({
-    headless: true,
-    args: ["--no-sandbox"],
-    executablePath: "/usr/bin/google-chrome"
+  headless: true,
+  args: ["--no-sandbox"],
+  executablePath: "/usr/bin/chromium-browser"  // hoặc "/usr/bin/chromium"
   });
 
   const page = await browser.newPage();
