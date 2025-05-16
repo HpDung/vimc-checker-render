@@ -12,7 +12,7 @@ async function getInternalLinks() {
   const browser = await puppeteer.launch({
   headless: true,
   args: ["--no-sandbox"],
-  executablePath: "/usr/bin/chromium-browser"  // hoặc "/usr/bin/chromium"
+  executablePath: "/usr/bin/chromium"  // hoặc "/usr/bin/chromium"
   });
 
   const page = await browser.newPage();
