@@ -1,5 +1,5 @@
 import express from "express";
-import puppeteer from "puppeteer-core";
+import puppeteer from "puppeteer";
 import nodemailer from "nodemailer";
 import fs from "fs";
 
@@ -10,10 +10,9 @@ const EMAIL_TO = "svcmarineservices@gmail.com";
 
 async function getInternalLinks() {
   const browser = await puppeteer.launch({
-    headless: true,
-    args: ["--no-sandbox"],
-    executablePath: "/opt/render/.cache/puppeteer/chrome/linux-121.0.6167.85/chrome"
-  });
+    headless: "new",
+    args: ["--no-sandbox"]
+});
 
   const page = await browser.newPage();
   await page.goto("https://vimc-shipping.com", { waitUntil: "networkidle2" });
