@@ -12,7 +12,7 @@ async function getInternalLinks() {
   const browser = await puppeteer.launch({
     headless: true,
     args: ["--no-sandbox"],
-    executablePath: "/usr/bin/google-chrome"
+    executablePath: "/opt/render/.cache/puppeteer/chrome/linux-121.0.6167.85/chrome"
   });
 
   const page = await browser.newPage();
