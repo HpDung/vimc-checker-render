@@ -1,5 +1,5 @@
 import express from "express";
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
 import nodemailer from "nodemailer";
 import fs from "fs";
 
@@ -10,8 +10,9 @@ const EMAIL_TO = "svcmarineservices@gmail.com";
 
 async function getInternalLinks() {
   const browser = await puppeteer.launch({
-    headless: "new",
-    args: ["--no-sandbox"]
+    headless: true,
+    args: ["--no-sandbox"],
+    executablePath: "/usr/bin/google-chrome"
   });
 
   const page = await browser.newPage();
